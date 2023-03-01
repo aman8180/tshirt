@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML FORM</title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <script>
+      window.addEventListener('load', () => {
+        registerSW();
+      });
+   
+      // Register the Service Worker
+      async function registerSW() {
+        if ('serviceWorker' in navigator) {
+          try {
+            await navigator
+                  .serviceWorker
+                  .register('serviceworker.js');
+          }
+          catch (e) {
+            console.log('SW registration failed');
+          }
+        }
+      }
+   </script>
+    
+    <style>
+      .head {
+        text-align: center;
+        font-size: 54px;
+        /* background-color: rgb(238, 195, 109); */
+        color: rgb(1, 5, 76);
+        padding-top: 34px;
+      }
+      body {
+        background-color: rgb(233, 224, 224);
+      }
+      .image {
+        width: 1492px;
+      }
+      .tagline {
+        padding: 13px 0;
+        display: flex;
+        flex-direction: column;
+      }
+      .form {
+        padding-left: 54px;
+      }
+      .actualcontent {
+        display: flex;
+      }
+      .first {
+        display: flex;
+      }
+      .addfirst {
+        display: flex;
+      }
+      .addfirst div {
+        padding: 69px;
+      }
+      .all {
+        display: flex;
+        flex-direction: column;
+      }
+      .addsecond {
+        display: flex;
+      }
+      .addfirst input {
+        width: 151px;
+        border-radius: 7px;
+        font-size: 17px;
+      }
+      .addsecond input {
+        width: 158px;
+        border-radius: 7px;
+        font-size: 17px;
+      }
+      .buttons button {
+        padding: 10px;
+        border-radius: 29px;
+        color: white;
+        background-color:rgb(1, 5, 76);
+        font-size: 23px;
+        font-weight: 900;
+        margin: 0px 6px;
+        cursor: pointer;
+      }
+      .buttons button:hover {
+        background-color: whitesmoke;
+        color: rgb(1, 5, 76);
+      }
+      .first label {
+        font-size: 24px;
+        color: rgb(1, 5, 76);
+      }
+
+      .payment label {
+        font-size: 24px;
+        color: rgb(1, 5, 76);
+      }
+      .addfirst label {
+        font-size: 24px;
+        color: rgb(1, 5, 76);
+      }
+      .addsecond label {
+        font-size: 24px;
+        color: rgb(1, 5, 76);
+      }
+      .all{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+      .all div input{
+        width: 151px;
+        border-radius: 7px;
+        font-size: 17px;
+      }
+      .all div label{
+        font-size: 24px;
+        color: rgb(1, 5, 76);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="head"><b>Hello There! Welcome</b></header>
+    <form action="" enctype="multipart/form-data" method="put">
+      <hr />
+      <div>
+        <img
+          class="image"
+          src="Screenshot 2022-08-20 163203.png"
+          alt="My Image"
+          width="250"
+        />
+      </div>
+      <div class="actualcontent">
+        <div
+          class="sidebar"
+          style="background-color: rgb(1, 5, 76); width: 224px"
+        ></div>
+        <div class="form">
+          <h2 style="text-align: center; color: rgb(1, 5, 76); font-size: 54px">
+            Give your order details here.
+          </h2>
+
+          <br /><br />
+          <div class="first">
+            <div class="tagline">
+              <label for="tagline">Enter Tagline:</label>
+              <input
+                type="text"
+                name="tagline"
+                id="tagline"
+                style="border-radius: 7px; width: 320px"
+              />
+
+              <div class="selectsize" style="padding-top: 8px">
+                <label for="size">Select Size:</label><br />
+                <select id="size" name="size" style="width: 170px">
+                  <option value="25">25</option>
+                  <option value="30">30</option>
+                  <option value="35">35</option>
+                  <option value="40">40</option>
+                </select>
+              </div>
+
+              <div class="selectquantity" style="padding-top: 8px">
+                <label for="quantity">Quantity: </label><br />
+                <select id="quantity" name="quantity" style="width: 170px">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+            <br /><br />
+            <div class="choosecolor" style="padding-left: 274px; width: 523px">
+              <fieldset>
+                <legend><label for="color">Choose Color:</label></legend>
+                <br />
+                <input
+                  type="radio"
+                  id="red"
+                  name="color"
+                  value="Red"
+                  required
+                />
+                <label for="red">Red</label><br />
+                <input
+                  type="radio"
+                  id="white"
+                  name="color"
+                  value="White"
+                  required
+                />
+                <label for="white">White</label><br />
+                <input
+                  type="radio"
+                  id="blue"
+                  name="color"
+                  value="blue"
+                  required
+                />
+
+                <label for="blue">Blue</label>
+              </fieldset>
+            </div>
+          </div>
+          <br /><br />
+          <br /><br />
+          <div class="payment">
+            <fieldset>
+              <legend>
+                <label for="payment_options">Payment Options:</label>
+              </legend>
+              <br />
+              <input
+                type="radio"
+                id="cc"
+                name="color"
+                value="Credit/Debit Card"
+              />
+              <label for="cc">Credit/Debit Card</label><br />
+              <input type="radio" id="upi" name="color" value="UPI" />
+              <label for="upi">UPI</label><br />
+              <input type="radio" id="crypto" name="color" value="Crypto" />
+              <label for="crypto">Crypto-Wallet</label><br /><br />
+            </fieldset>
+          </div>
+          <br /><br />
+          <hr />
+          <div class="all">
+            <div>
+              <h4
+                style="
+                  text-align: center;
+                  color: rgb(1, 5, 76);
+                  font-size: 54px;
+                "
+              >
+                Put your delivery address.
+              </h4>
+            </div>
+            <!-- <div class="addfirst"> -->
+              <div class="flat" style="padding-top: 1px">
+                <label for="address">Flat/Plot/Building: </label>
+                <input type="text" name="address" id="address" required />
+              </div>
+              <br /><br />
+              <div class="area" style="padding-top: 1px">
+                <label for="address1">Street/area: </label>
+                <input type="text" name="address1" id="address1" />
+              </div>
+              <br /><br />
+              <div class="city" style="padding-top: 1px">
+                <label for="address2">City: </label>
+                <input type="text" name="address2" id="address2" />
+              </div>
+              <br /><br />
+            <!-- </div> -->
+            <!-- <div class="addsecond"> -->
+              <div class="state" >
+                <label for="address3">State: </label>
+                <input type="text" name="address3" id="address3" />
+              </div>
+              <br /><br />
+              <div class="pincode" style="padding: 0px 0px">
+                <label for="address4">Enter Pincode: </label>
+                <input
+                  type="number"
+                  name="address4"
+                  id="address4"
+                  required
+                  min="100000"
+                  max="999999"
+                />
+              </div>
+            <!-- </div> -->
+          </div>
+          <br /><br />
+          <div class="buttons" style="padding-left: 482px">
+            <button type="submit">Place Order</button>
+          </div>
+          <footer
+            style="
+              padding-top: 26px;
+              color: rgb(1, 5, 76);
+              padding-left: 482px;
+              font-size: 41px;
+            "
+          >
+            Thank You!
+          </footer>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
